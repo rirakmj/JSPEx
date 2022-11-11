@@ -18,12 +18,20 @@
 </head>
 <%
 request.setCharacterEncoding("utf-8");
+// String = Object, need to cast
+String sid = (String)session.getAttribute("sUserid");
 MemberDAO dao = MemberDAOImpl.getInstance();
 ArrayList<MemberDTO> memberList = dao.memberList();
 int count = dao.getCount();
 %>
 <body>
+	
 	<div class="container mt-5">
+		<div align="right">
+	    <a href="memberView.jsp"><%=sid %>님</a> 반갑습니다. 
+	    / <a href="logout.jsp">로그아웃</a>
+	    </div>
+	
 		<h3>회원리스트(<span id="cntSpan"><%=count %></span>)</h3>
 
 		<table class="table table-hover">
@@ -55,6 +63,7 @@ int count = dao.getCount();
 			}
 			%>
 	</tbody>
+	
 </table>
 </div>
 </body>

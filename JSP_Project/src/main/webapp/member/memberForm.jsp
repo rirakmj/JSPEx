@@ -15,6 +15,9 @@
 </head>
 <body>
 <div class="container mt-3">
+<div align="right">
+<a href="loginForm.jsp">로그인</a>
+</div>
   <h2>회원가입</h2>
   <form action="memberInsertPro.jsp" method="post" id="frm">
     <div class="form-group">
